@@ -65,8 +65,26 @@
         margin: 5px 5px 5px 10px;
     }
     .principal{
+        background-color: white;
+        margin: 5px 10px 0px 10px;
         display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 5fr 1fr;
+        grid-template-rows: repeat(7, 1fr);
+    }
+    .principal > h1{
+        margin: 5px;
+        text-align: left;
+        color: #0077ff;
+        border-radius: 5px;
+        
+    }
+    .hab > progress{
+        width: 100%;
+    }
+    .hab{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        color: #0077ff;
+        font-weight: bolder;
     }
 }
