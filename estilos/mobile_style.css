@@ -1,5 +1,30 @@
 @charset "UTF-8";
 
+/* VARIÁVEIS DE CORES */
+:root {
+    /* Modo Claro: Azul, Branco e Preto */
+    --cor-fundo: lightgray;
+    --cor-card: white;
+    --cor-secao: lightgray;
+    --cor-principal: #0077ff; /* Azul */
+    --cor-texto: #000000;    /* Preto */
+}
+
+body.dark-mode {
+    /* Modo Escuro: Preto, Laranja e Branco */
+    --cor-fundo: #121212;
+    --cor-card: #1e1e1e;
+    --cor-secao: #2d2d2d;
+    --cor-principal: #ff6600; /* Laranja */
+    --cor-texto: #ffffff;    /* Branco */
+}
+
+/* ROLAGEM SUAVE E ESPAÇAMENTO PARA O MENU FIXO */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
 @media screen and (max-width: 360px){
     *{
         margin: 0px;
@@ -15,7 +40,9 @@
         gap: 10px;
     }
     body{
-        background-color: lightgray;
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto);
+        transition: background-color 0.3s, color 0.3s;
     }
     nav > ul > li > a{
         color: white;
@@ -24,29 +51,26 @@
         position: sticky;
         top: 0;
         z-index: 1000;
-    }
-    header > a{
-        margin: 2px 3px 0px 3px;
-        color: #0077ff;
-        font-size: 1.3em;
-        
-    }
-    nav{
         color: white;
-        background-color: #0077ff;
+        background-color: var(--cor-principal);
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         padding: 5px;
     }
+    header > a{
+        margin: 2px 3px 0px 3px;
+        color: var(--cor-principal);
+        font-size: 1.3em;
+    }
     .cabeca{
-        background-color: white;
+        background-color: var(--cor-card);
+        color: var(--cor-texto);
         border-radius: 5px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         margin: 0px 10px 0px 10px;
-        
     }
     .cabeca > img{
         padding: 3px;
@@ -55,24 +79,23 @@
         height: 100px;
         object-fit: cover;
         border-radius: 50%;
-        border: 5px solid #0077ff;
-        
+        border: 5px solid var(--cor-principal);
     }
     .cabeca > h1{
         margin: 10px 0px 0px 0px;
         margin-right: auto;
         font-size: 1.4em;
         text-indent: 10px;
-        color: #0077ff;
+        color: var(--cor-principal);
     }
     .cabeca > p{
-        font-size: 0.5;
+        font-size: 0.9em;
         margin: 5px 5px 5px 10px;
     }
     .principal{
         gap: 10px;
         border-radius: 5px;
-        background-color: white;
+        background-color: var(--cor-card);
         margin: 5px 10px 0px 10px;
         display: grid;
         grid-template-rows: repeat(7, 1fr);
@@ -80,9 +103,8 @@
     .principal > h1{
         margin: 5px;
         text-align: left;
-        color: #0077ff;
+        color: var(--cor-principal);
         border-radius: 5px;
-        
     }
     .hab > span , progress{
         margin: 0px 5px 5px 5px;
@@ -94,13 +116,12 @@
         font-size: 1.3em;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        color: #0077ff;
+        color: var(--cor-principal);
         font-weight: bolder;
     }
     .formacao{
         border-radius: 5px;
-        background-color: white;
+        background-color: var(--cor-card);
         margin: 5px 10px 0px 10px;
         display: grid;
         grid-template-rows: 0.5fr repeat(4, 1fr);
@@ -108,47 +129,46 @@
     .formacao > h1{
         margin: 0px 0px 0px 5px;
         text-align: left;
-        color: #0077ff;
+        color: var(--cor-principal);
         border-radius: 5px;
-        
     }
     .formacao > section > h2{
         margin: 0px 0px 0px 10px;
         text-align: left;
-        color: #0077ff;    
+        color: var(--cor-principal);    
     }
     .formacao > section > h3{
         font-weight: 100;
         font-size: 1em;
         margin: 0px 0px 0px 10px;
         text-align: left;
-        color: #000000;
+        color: var(--cor-texto);
     }
     .formacao > section{
         border-radius: 5px;
         padding: 5px;
-        background-color: lightgrey;
+        background-color: var(--cor-secao);
         margin: 10px;
     }
-
     .projetos{
         border-radius: 5px;
-        background-color: white;
+        background-color: var(--cor-card);
         margin: 5px 10px 0px 10px;
         display: grid;
-        grid-template-rows: 0.2fr repeat(3, 1fr);
+        grid-template-rows: 0.2fr repeat(3, 0.9fr);
     }
     .projetos > div > h1{
         margin: 0px 0px 0px 5px;
         text-align: left;
-        color: #0077ff;
+        color: var(--cor-principal);
         border-radius: 5px;
     }
     .projetos > div > section{
         border-radius: 5px;
         margin: 10px;
         padding: 5px 2px 5px 2px;
-        background: lightgray;
+        background: var(--cor-secao);
+        color: var(--cor-texto);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -157,8 +177,15 @@
         width: 95%;
     }
     .projetos > div > section > p {
-        width: 95%;          /* Mantém a mesma largura da imagem */
-        text-align: left;    /* Alinha o texto do parágrafo à esquerda */
-        margin-top: 8px;     /* Dá um espaçamento em relação à imagem */
+        width: 95%;
+        text-align: left;
+        margin-top: 8px;
+    }
+
+    /* Estilo do botão ver mais/menos */
+    details > summary {
+        color: var(--cor-principal);
+        cursor: pointer;
+        font-weight: bold;
     }
 }
