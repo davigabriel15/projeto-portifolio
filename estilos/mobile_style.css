@@ -44,6 +44,11 @@ html {
         color: var(--cor-texto);
         transition: background-color 0.3s, color 0.3s;
     }
+    li:hover{
+        padding: 3px;
+        border-radius: 3px;
+        background-color: #68a5ebc7;
+    }
     nav > ul > li > a{
         color: white;
     }
@@ -70,7 +75,7 @@ html {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        margin: 0px 10px 0px 10px;
+        margin: 0px 10px 20px 10px;
     }
     .cabeca > img{
         padding: 3px;
@@ -96,7 +101,7 @@ html {
         gap: 10px;
         border-radius: 5px;
         background-color: var(--cor-card);
-        margin: 5px 10px 0px 10px;
+        margin: 5px 10px 15px 10px;
         display: grid;
         grid-template-rows: repeat(7, 1fr);
     }
@@ -122,7 +127,7 @@ html {
     .formacao{
         border-radius: 5px;
         background-color: var(--cor-card);
-        margin: 5px 10px 0px 10px;
+        margin: 5px 10px 15px 10px;
         display: grid;
         grid-template-rows: 0.5fr repeat(4, 1fr);
     }
@@ -132,10 +137,30 @@ html {
         color: var(--cor-principal);
         border-radius: 5px;
     }
-    .formacao > section > h2{
-        margin: 0px 0px 0px 10px;
-        text-align: left;
-        color: var(--cor-principal);    
+.formacao > section {
+        border-radius: 5px;
+        padding: 8px;
+        background-color: var(--cor-secao);
+        margin: 10px;
+        
+        /* Borda transparente por padrão para manter o alinhamento */
+        border-left: 5px solid transparent; 
+        
+        /* Controla a suavidade da animação ao passar o mouse */
+        transition: transform 0.3s ease, border-left-color 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    /* EFEITO HOVER (Passar o mouse ou clicar no celular) */
+    .formacao > section:hover {
+        /* Move o container 8px suavemente para a direita */
+        transform: translateX(8px); 
+        
+        /* Mostra a borda com a cor principal (Azul no modo claro, Laranja no modo escuro) */
+        border-left-color: var(--cor-principal); 
+        
+        /* Adiciona uma leve sombra para dar efeito de profundidade */
+        box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.15);
     }
     .formacao > section > h3{
         font-weight: 100;
