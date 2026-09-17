@@ -181,37 +181,45 @@ html {
         margin: 10px;
     }
     /*Projetos */
-    .projetos{
-        border-radius: 5px;
-        background-color: var(--cor-card);
-        margin: 5px 10px 0px 10px;
-        display: grid;
-        grid-template-rows: 0.2fr repeat(3, 0.9fr);
-    }
-    .projetos > div > h1{
-        margin: 0px 0px 0px 5px;
-        text-align: left;
-        color: var(--cor-principal);
-        border-radius: 5px;
-    }
-    .projetos > div > section{
-        border-radius: 5px;
-        margin: 10px;
-        padding: 5px 2px 5px 2px;
-        background: var(--cor-secao);
-        color: var(--cor-texto);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .projetos > div > section > img{
-        width: 95%;
-    }
-    .projetos > div > section > p {
-        width: 95%;
-        text-align: left;
-        margin-top: 8px;
-    }
+    /* Projetos - Versão Mobile */
+.projetos {
+    border-radius: 5px;
+    background-color: var(--cor-card);
+    margin: 5px 10px 15px 10px;
+    padding: 10px;
+    
+    /* Troque o grid com alturas fixas por flexbox vertical */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Controla a distância exata entre cada card de projeto */
+}
+
+.projetos > div > h1 {
+    margin: 0 0 10px 5px;
+    text-align: left;
+    color: var(--cor-principal);
+}
+
+.projetos > div > section {
+    border-radius: 5px;
+    padding: 10px;
+    background: var(--cor-secao);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projetos > div > section > img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.projetos > div > section > p {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+}
 
     /* Estilo do botão ver mais/menos */
     details > summary {
