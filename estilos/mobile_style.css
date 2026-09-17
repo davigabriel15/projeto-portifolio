@@ -65,7 +65,7 @@ html {
         justify-content: flex-end;
         padding: 5px;
     }
-    header > a{
+    header > div > a{
         margin: 2px 3px 0px 3px;
         color: var(--cor-principal);
         font-size: 1.3em;
